@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script type="text/javascript">
+    function randomFloat(){
+        
+    if (window.XMLHttpRequest) {
+            xmlhttp =  new XMLHttpRequest(); 
+        } else if(window.ActiveXObject) {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+        } else {
+            alert("Your browser doesn't support the XmlHttpRequest object.");
+        }
+
+    xmlhttp.onreadystatechange=function(){
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		    document.getElementById("res").innerHTML=xmlhttp.responseText;
+    	}	
+  	}
+	xmlhttp.open("GET","randomFloat.php",true);
+	xmlhttp.send();
+    }
+
+    </script>
+</head>
+
+<body>
+
+        
+        <button type="button" onclick="randomFloat()">Generate</button>
+        <br>
+        <br>
+        <strong><div id="res" >&nbsp;</div></strong>
+        
+        
+
+</body>
+
+
+
+
+
+
+

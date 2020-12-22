@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4223</title>
+    <script type="text/javascript">
+        function getXmlHttpRequestObject() {
+        
+        if (window.XMLHttpRequest) {
+                return new XMLHttpRequest(); 
+            } else if(window.ActiveXObject) {
+                return new ActiveXObject("Microsoft.XMLHTTP"); 
+            } else {
+                alert("Your browser doesn't support the XmlHttpRequest object.");
+            }
+        }	
+            var Req = getXmlHttpRequestObject();
+        
+            Req.open("GET", "Exam.txt", true);
+            Req.send();
+        
+            Req.onreadystatechange = function() {
+            if (Req.readyState == 4 && Req.status==200) {
+                document.getElementById("res").innerHTML = Req.responseText;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p style="text-align: center;"><strong><div id="res" >&nbsp;</div></strong></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4223</title>
+</head>
+<script type="text/javascript">
+    function Convert(){
+	temp=document.getElementById("valFrom").value
+	if (window.XMLHttpRequest){
+  		xmlhttp=new XMLHttpRequest();
+  	}else {
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	xmlhttp.onreadystatechange=function(){
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		    document.getElementById("result").innerHTML=xmlhttp.responseText;
+    	}	
+  	}
+	xmlhttp.open("GET","tempCon.php?val="+temp+"&t=" + Math.random(),true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+	Fahrenheit : <input type="Text" name="valFrom" id="valFrom"> 
+	<strong><div id="result" >&nbsp;</div></strong>
+	<button type="button" onclick="Convert()">Convert</button>
+</body>
+</html>
